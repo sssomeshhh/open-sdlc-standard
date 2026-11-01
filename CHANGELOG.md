@@ -19,10 +19,9 @@ Status: draft. First public draft.
   16 MAY). Every requirement states the *Evidence* an auditor looks for and the *Basis* it rests on: cited sources, or
   a label where the content or level is the author's judgement.
 - Five lifecycle gates, G0 Inception to G4 Retirement. Every requirement names its gate. By that gate, a MUST is met or
-  covered by a valid waiver, and a SHOULD is met or recorded as a deviation in the tailoring record; for a MAY, the gate only
-  says from when the option applies.
-  Some also carry a *Condition* (it applies only once a state is reached) or a *Trigger* (it applies again at each occurrence
-  of an event).
+  covered by a valid waiver, a SHOULD is met or entered in the tailoring record, and a MAY never blocks it: its gate only
+  says from when the option applies. Some also carry a *Condition* (it applies only once a state is reached) or a
+  *Trigger* (it applies again at each occurrence of an event).
 - Rules for applying the standard:
   - scope: the unit of adoption (a system with one home repository), project types including libraries and tools,
     "not applicable", and conflicts with law, contracts, policies and customer requirements;

@@ -69,6 +69,8 @@ evidence that shows it. It covers the whole software development lifecycle (SDLC
     record states both dates. It is remediated like any other unmet requirement, the audit result reflects it, and the next
     gate cannot be recorded until it is met again or covered as the gate rule allows. A gate already passed stays passed;
     gates are not reopened.
+  - **Condition: *state reached*** (only on some requirements). The requirement applies only once the condition is first reached
+    (and not before its gate); from then on it stays in force.
   - **Trigger: *event*** (only on some requirements). From its gate onwards (and, where it also has a Condition, once that condition is reached), the requirement applies again every time the event
     happens and, at its level, is met for that occurrence within the time the requirement states (or the project sets). A
     requirement carries a trigger when something must be done or produced for each occurrence of an event (each release,
@@ -76,8 +78,6 @@ evidence that shows it. It covers the whole software development lifecycle (SDLC
     record, an artifact, a test result, an approval or a review. Standing properties of the system or the pipeline (for example
     zero-downtime design, a CI gate, a protected branch) hold continuously and carry no trigger; so do obligations on every change,
     which CI and review enforce.
-  - **Condition: *state reached*** (only on some requirements). The requirement applies only once the condition is first reached
-    (and not before its gate); from then on it stays in force.
 - **Project types.** A prototype or proof of concept that never reaches real users or real data needs only the G0 and G1
   requirements, and is re-assessed against the full standard before any real use. Work built by a supplier meets the same standard
   through its contract (Area 20). For configured SaaS or low-code systems, requirements about source code are not applicable; the

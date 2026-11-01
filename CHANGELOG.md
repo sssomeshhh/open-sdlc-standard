@@ -18,8 +18,9 @@ Status: draft. First public draft.
 - 306 requirements, each graded MUST, SHOULD or MAY in the sense of RFC 2119 and RFC 8174 (163 MUST, 127 SHOULD,
   16 MAY). Every requirement states the *Evidence* an auditor looks for and the *Basis* it rests on: cited sources, or
   a label where the content or level is the author's judgement.
-- Five lifecycle gates, G0 Inception to G4 Retirement. Every requirement names its gate: for a MUST or SHOULD, the gate
-  by which it must be met (or, for a SHOULD, entered in the tailoring record); for a MAY, from when the option applies.
+- Five lifecycle gates, G0 Inception to G4 Retirement. Every requirement names its gate. By that gate, a MUST is met or
+  covered by a waiver, and a SHOULD is met or recorded as a deviation in the tailoring record; for a MAY, the gate only
+  says from when the option applies.
   Some also carry a *Condition* (it applies only once a state is reached) or a *Trigger* (it applies again at each occurrence
   of an event).
 - Rules for applying the standard:

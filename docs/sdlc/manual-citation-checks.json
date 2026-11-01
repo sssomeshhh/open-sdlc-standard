@@ -1,0 +1,95 @@
+{
+  "about": "Quotes checked by hand because tools/check_citations.py cannot read the source automatically. A record covers a quote only while its text is unchanged (sha256 of the normalised quote) and for 12 months from 'checked'. See tools/check_citations.py.",
+  "checks": [
+    {
+      "key": "SWEBOK",
+      "file": "areas/01-product-and-requirements.md",
+      "line": 182,
+      "sha256": "c921aafe4853e281384e547bd89cea00368fe839621eb9ab18301f051f9ae537",
+      "url": "https://ieeecs-media.computer.org/media/education/swebok/swebok-v4.pdf",
+      "method": "Checked by hand at the owner's direction, not by tools/check_citations.py (which respects the site's robots.txt and does not fetch this file): the PDF was opened once in a browser engine, its text extracted with pdftotext, and the quote found exactly",
+      "checked": "2026-10-31",
+      "checked_by": "SomesH S (AI-assisted)"
+    },
+    {
+      "key": "SWEBOK",
+      "file": "areas/01-product-and-requirements.md",
+      "line": 183,
+      "sha256": "4baa9f4a102cd9234a478da9bd64c0e13e7bf284662d430daca45fb5b3a427b9",
+      "url": "https://ieeecs-media.computer.org/media/education/swebok/swebok-v4.pdf",
+      "method": "Checked by hand at the owner's direction, not by tools/check_citations.py (which respects the site's robots.txt and does not fetch this file): the PDF was opened once in a browser engine, its text extracted with pdftotext, and the quote found exactly",
+      "checked": "2026-10-31",
+      "checked_by": "SomesH S (AI-assisted)"
+    },
+    {
+      "key": "SWEBOK",
+      "file": "areas/01-product-and-requirements.md",
+      "line": 184,
+      "sha256": "8f414fa34dca3b1535f12517cb973e7e3b248ae91ef8ad8cdbcaa826534063b9",
+      "url": "https://ieeecs-media.computer.org/media/education/swebok/swebok-v4.pdf",
+      "method": "Checked by hand at the owner's direction, not by tools/check_citations.py (which respects the site's robots.txt and does not fetch this file): the PDF was opened once in a browser engine, its text extracted with pdftotext, and the quote found exactly",
+      "checked": "2026-10-31",
+      "checked_by": "SomesH S (AI-assisted)"
+    },
+    {
+      "key": "SWEBOK",
+      "file": "areas/01-product-and-requirements.md",
+      "line": 185,
+      "sha256": "400b2e196a0eb24a470e9af884c677a66926b277b50b4d075623a6d63b514d47",
+      "url": "https://ieeecs-media.computer.org/media/education/swebok/swebok-v4.pdf",
+      "method": "Checked by hand at the owner's direction, not by tools/check_citations.py (which respects the site's robots.txt and does not fetch this file): the PDF was opened once in a browser engine, its text extracted with pdftotext, and the quote found exactly",
+      "checked": "2026-10-31",
+      "checked_by": "SomesH S (AI-assisted)"
+    },
+    {
+      "key": "SWEBOK",
+      "file": "areas/02-architecture-and-design.md",
+      "line": 175,
+      "sha256": "a23123c926a9773d46a2628d581b982a082c4daf31c936f471c47eed55e52fe3",
+      "url": "https://ieeecs-media.computer.org/media/education/swebok/swebok-v4.pdf",
+      "method": "Checked by hand at the owner's direction, not by tools/check_citations.py (which respects the site's robots.txt and does not fetch this file): the PDF was opened once in a browser engine, its text extracted with pdftotext, and the quote found exactly",
+      "checked": "2026-10-31",
+      "checked_by": "SomesH S (AI-assisted)"
+    },
+    {
+      "key": "SWEBOK",
+      "file": "areas/02-architecture-and-design.md",
+      "line": 176,
+      "sha256": "89da341025e04aebbe511653d185ead213eb8eac9eed77bff72b0a93429161b4",
+      "url": "https://ieeecs-media.computer.org/media/education/swebok/swebok-v4.pdf",
+      "method": "Checked by hand at the owner's direction, not by tools/check_citations.py (which respects the site's robots.txt and does not fetch this file): the PDF was opened once in a browser engine, its text extracted with pdftotext, and the quote found exactly",
+      "checked": "2026-10-31",
+      "checked_by": "SomesH S (AI-assisted)"
+    },
+    {
+      "key": "SWEBOK",
+      "file": "areas/03-code-quality-and-conventions.md",
+      "line": 180,
+      "sha256": "36bb3c941cd463feff63c4fce8fd4e1766cfab6b3f35622fd7290ccf2cc873cc",
+      "url": "https://ieeecs-media.computer.org/media/education/swebok/swebok-v4.pdf",
+      "method": "Checked by hand at the owner's direction, not by tools/check_citations.py (which respects the site's robots.txt and does not fetch this file): the PDF was opened once in a browser engine, its text extracted with pdftotext, and the quote found exactly",
+      "checked": "2026-10-31",
+      "checked_by": "SomesH S (AI-assisted)"
+    },
+    {
+      "key": "SWEBOK",
+      "file": "areas/04-testing-and-quality-assurance.md",
+      "line": 167,
+      "sha256": "46d8999f95ca20864d71993f8718dd1a3d77cc205c4e66d426224191d026fb09",
+      "url": "https://ieeecs-media.computer.org/media/education/swebok/swebok-v4.pdf",
+      "method": "Checked by hand at the owner's direction, not by tools/check_citations.py (which respects the site's robots.txt and does not fetch this file): the PDF was opened once in a browser engine, its text extracted with pdftotext, and the quote found exactly",
+      "checked": "2026-10-31",
+      "checked_by": "SomesH S (AI-assisted)"
+    },
+    {
+      "key": "AI600",
+      "file": "areas/19-ai-assisted-development.md",
+      "line": 154,
+      "sha256": "12ae68cdd76eb217415b9c463a0983bc8f7139490bc88e2214ea08b3612d34cb",
+      "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf",
+      "method": "PDF text extracted with pdftotext (default and -layout); the quoted sentence is in a table cell split by text from the next column; read by hand and confirmed",
+      "checked": "2026-10-31",
+      "checked_by": "SomesH S (AI-assisted)"
+    }
+  ]
+}

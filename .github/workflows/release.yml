@@ -1,0 +1,85 @@
+# SPDX-License-Identifier: MIT
+# Publishes a GitHub release when a version tag (vMAJOR.MINOR.PATCH) is pushed. The tag itself is created and signed by the
+# maintainer; this workflow only publishes, and refuses unless the tag is an annotated tag whose signature GitHub has
+# verified, the tagged commit is on trunk, and the "checks" workflow passed for that exact commit.
+name: release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: read
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write  # create the release
+      actions: read    # look up the checks run for the tagged commit
+    env:
+      TAG: ${{ github.ref_name }}
+      GH_REPO: ${{ github.repository }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Tag format is vMAJOR.MINOR.PATCH and matches the VERSION file
+        run: |
+          [[ "$TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]] || { echo "::error::tag $TAG is not vMAJOR.MINOR.PATCH"; exit 1; }
+          [ "$TAG" = "v$(tr -d '[:space:]' < VERSION)" ] || { echo "::error::tag $TAG does not match VERSION"; exit 1; }
+
+      - name: Tag is annotated and its signature is verified by GitHub
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          ref_type=$(gh api "repos/$GH_REPO/git/ref/tags/$TAG" --jq '.object.type')
+          tag_obj=$(gh api "repos/$GH_REPO/git/ref/tags/$TAG" --jq '.object.sha')
+          [ "$ref_type" = "tag" ] || { echo "::error::$TAG is a lightweight tag; use a signed annotated tag"; exit 1; }
+          verified=$(gh api "repos/$GH_REPO/git/tags/$tag_obj" --jq '.verification.verified')
+          [ "$verified" = "true" ] || { echo "::error::GitHub could not verify the signature of $TAG"; exit 1; }
+          echo "SHA=$(git rev-parse "$TAG^{commit}")" >> "$GITHUB_ENV"
+
+      - name: Tagged commit is on trunk
+        run: |
+          git merge-base --is-ancestor "$SHA" origin/trunk \
+            || { echo "::error::$SHA is not on trunk"; exit 1; }
+
+      - name: The checks workflow passed for this commit
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          ok=$(gh run list --workflow checks.yml --commit "$SHA" --event push --json conclusion \
+                 --jq '[.[] | select(.conclusion == "success")] | length')
+          [ "${ok:-0}" -ge 1 ] || { echo "::error::no successful 'checks' run on trunk for $SHA; wait for CI on trunk, then re-run this job"; exit 1; }
+
+      - name: Structure check on the tagged commit
+        run: python3 -I tools/check_structure.py
+
+      - name: Release notes from the CHANGELOG
+        run: |
+          python3 -I - <<'EOF'
+          import os, re, sys
+          version = os.environ["TAG"][1:]
+          with open("CHANGELOG.md", encoding="utf-8") as f:
+              text = f.read()
+          m = re.search(r"^## \[" + re.escape(version) + r"\][^\n]*\n(.*?)(?=^## |^\[[^\]]+\]: |\Z)", text, re.S | re.M)
+          if not m:
+              sys.exit(f"::error::CHANGELOG.md has no '## [{version}]' section")
+          notes = m.group(1).strip()
+          with open("notes.md", "w", encoding="utf-8") as f:
+              f.write(notes + "\n")
+          with open(os.environ["GITHUB_ENV"], "a") as env:
+              env.write("PRERELEASE=" + ("1" if re.search(r"^Status: draft", notes, re.M) else "0") + "\n")
+          EOF
+
+      - name: Publish the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          flags=()
+          [ "$PRERELEASE" = "1" ] && flags+=(--prerelease)
+          gh release create "$TAG" --verify-tag --title "Open SDLC Standard $TAG" --notes-file notes.md "${flags[@]}"

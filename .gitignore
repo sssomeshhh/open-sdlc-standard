@@ -1,0 +1,34 @@
+# Local tooling and working folders
+.claude/
+.remember/
+.tmp/
+review/
+
+# Python bytecode
+__pycache__/
+*.pyc
+
+# Local secrets (never commit)
+.env
+.env.*
+
+# Local renders and Office lock files (the Markdown is the source)
+*.docx
+*.pdf
+~$*
+
+# OS cruft
+.DS_Store
+._*
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Editor cruft
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.#*
+\#*#

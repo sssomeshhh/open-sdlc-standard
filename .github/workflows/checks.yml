@@ -1,0 +1,40 @@
+# SPDX-License-Identifier: MIT
+name: checks
+
+on:
+  pull_request:
+  push:
+    branches: [trunk]
+
+permissions:
+  contents: read
+
+jobs:
+  structure:
+    name: structure
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          persist-credentials: false
+      - run: python3 -I tools/check_structure.py
+      - name: Tool regression tests
+        run: python3 -m unittest discover -s tools/tests
+
+  citations-changed:
+    # Checks only the quotes this pull request adds or changes. A quote that does not match its source fails the
+    # check; a source that cannot be read automatically is listed for a person to check, and does not fail it.
+    name: citations (changed quotes)
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - run: sudo apt-get update && sudo apt-get install -y --no-install-recommends poppler-utils
+      - run: python3 -I tools/check_citations.py --changed "origin/${BASE_REF}"
+        env:
+          BASE_REF: ${{ github.base_ref }}

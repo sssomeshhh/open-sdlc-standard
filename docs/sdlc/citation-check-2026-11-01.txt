@@ -1,0 +1,4 @@
+# Citation check
+
+all quotes: 613 checked, 604 OK, 9 MANUAL, 0 MISMATCH, 0 UNVERIFIED.
+

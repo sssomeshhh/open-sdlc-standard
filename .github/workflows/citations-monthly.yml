@@ -1,0 +1,45 @@
+# SPDX-License-Identifier: MIT
+name: citations (all quotes)
+
+on:
+  schedule:
+    - cron: "0 3 1 * *"  # 03:00 UTC on the 1st of every month
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  all-quotes:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions:
+      contents: read
+      issues: write  # only to open an issue when a quote needs attention
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          persist-credentials: false
+      - run: sudo apt-get update && sudo apt-get install -y --no-install-recommends poppler-utils
+      - id: check
+        run: |
+          set +e
+          python3 -I tools/check_citations.py --all --report report.md
+          echo "exit=$?" >> "$GITHUB_OUTPUT"
+          grep -q "^## \(MISMATCH\|UNVERIFIED\|RE-CHECK DUE\)" report.md && echo "attention=1" >> "$GITHUB_OUTPUT"
+          exit 0
+      - if: steps.check.outputs.attention == '1'
+        # One open issue at most: comment on it if it exists, otherwise open it.
+        run: |
+          gh label create citation --color FBCA04 --description "Citation problems" --force
+          open_issue=$(gh issue list --label citation --state open --json number --jq '.[0].number // empty')
+          if [ -n "$open_issue" ]; then
+            gh issue comment "$open_issue" --body-file report.md
+          else
+            gh issue create --title "Citation check: quotes need attention" --label citation --body-file report.md
+          fi
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+      - if: steps.check.outputs.exit != '0'
+        run: exit 1

@@ -7,6 +7,14 @@ README ("This standard").
 
 ## [Unreleased]
 
+### Changed
+
+- Citation keys renamed so that each publisher or publication series uses one prefix (CONTRIBUTING, citation rule 8):
+  `GDS-DISC`, `GDS-P1`, `GDS-P11` → `GOVUK-DISC`, `GOVUK-P1`, `GOVUK-P11`; the eight `CS-` keys → `OWASP-CS-` keys,
+  and `OWASP-IV` → `OWASP-CS-INPUT`; `PYRAMID` → `FOWLER-PYRAMID`; `NIST-92`, `NIST-92R1`, `NIST-500-235`,
+  `NISTIR8286` → `SP800-92`, `SP800-92R1`, `SP500-235`, `IR8286`; `JIS-WAIC`, `JIS-GIHYO` → `WAIC-JIS2016`,
+  `GIHYO-JIS`. Sources, quotes and requirements are unchanged.
+
 ## [0.1.0] - 2026-11-01
 
 Status: draft. First public draft.

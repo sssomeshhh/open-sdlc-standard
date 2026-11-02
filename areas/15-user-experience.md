@@ -26,11 +26,11 @@ Left to other areas:
 Web user interfaces MUST conform to WCAG 2.2 Level AA.
 - **Gate:** G3
 - **Evidence:** the conformance report (scope, date, method, results, exceptions) published under UX-15.
-- **Basis:** [WCAG22], [GOVUK-ACC], [JIS-WAIC], [JIS-GIHYO] (secondary source; revision status not confirmed with the standards
+- **Basis:** [WCAG22], [GOVUK-ACC], [WAIC-JIS2016], [GIHYO-JIS] (secondary source; revision status not confirmed with the standards
   body). Level: author's judgement (the GOV.UK source mandates WCAG 2.2 AA for UK public-sector services only).
 - Note: success criteria that are often missed include 4.1.3 Status Messages and 3.3.8 Accessible Authentication (Minimum).
 - Note: where conformance to Japan's JIS X 8341-3 is to be stated: the current edition, JIS X 8341-3:2016, is identical to
-  ISO/IEC 40500:2012, which is WCAG 2.0, not 2.2. A revision based on ISO/IEC 40500:2025 (as reported by [JIS-GIHYO]) was expected
+  ISO/IEC 40500:2012, which is WCAG 2.0, not 2.2. A revision based on ISO/IEC 40500:2025 (as reported by [GIHYO-JIS]) was expected
   in 2026 but its publication is unconfirmed; check the current edition before stating conformance.
 
 ### UX-2 · MUST · Human evaluation behind any accessibility claim
@@ -161,6 +161,11 @@ The project MUST publish or keep an accessibility conformance statement giving i
 - **[DADS]** デジタル庁デザインシステムβ版 (v2.18.2). Digital Agency (デジタル庁), Japan. https://design.digital.go.jp/.
   Accessed 2026-10-31.
   > "ユーザビリティとアクセシビリティを踏まえた設計や実装のためのガイドラインから構成されるデザインアセットです。"
+- **[GIHYO-JIS]** 「2026年のWebアクセシビリティ」, 2026-01-06. 中村直樹, gihyo.jp.
+  https://gihyo.jp/article/2026/01/web-accessibility-prospect. Accessed 2026-10-31. Secondary source by a practitioner; the
+  revision's publication status was not confirmed with the standards body.
+  > "改正JISは、JIS X 8341-3:2016と同様に、ISO/IEC 40500:2025との国際一致規格とすることを基本として考えています。" (改正JISの動向)
+  > "順調にいけば、今年中にも改正JISが発行される見込みです。" (改正JISの動向)
 - **[GOVUK-ACC]** "Making your service accessible: an introduction", GOV.UK Service Manual. Government Digital Service.
   https://www.gov.uk/service-manual/helping-people-to-use-your-service/making-your-service-accessible-an-introduction.
   Accessed 2026-10-31.
@@ -181,14 +186,6 @@ The project MUST publish or keep an accessibility conformance statement giving i
 - **[GOVUK-UT]** "Using moderated usability testing", GOV.UK Service Manual. Government Digital Service.
   https://www.gov.uk/service-manual/user-research/using-moderated-usability-testing. Accessed 2026-10-31.
   > "Moderated usability testing is where you watch participants try to complete specific tasks using your service."
-- **[JIS-GIHYO]** 「2026年のWebアクセシビリティ」, 2026-01-06. 中村直樹, gihyo.jp.
-  https://gihyo.jp/article/2026/01/web-accessibility-prospect. Accessed 2026-10-31. Secondary source by a practitioner; the
-  revision's publication status was not confirmed with the standards body.
-  > "改正JISは、JIS X 8341-3:2016と同様に、ISO/IEC 40500:2025との国際一致規格とすることを基本として考えています。" (改正JISの動向)
-  > "順調にいけば、今年中にも改正JISが発行される見込みです。" (改正JISの動向)
-- **[JIS-WAIC]** 「JIS X 8341-3:2016 解説」. ウェブアクセシビリティ基盤委員会 (WAIC). https://waic.jp/docs/jis2016/understanding/201604/.
-  Accessed 2026-10-31. States that JIS X 8341-3:2016 is identical to ISO/IEC 40500:2012 (WCAG 2.0).
-  > "『JIS X 8341-3:2016』は、『ISO/IEC 40500:2012』の一致規格になっている。"
 - **[KOYO]** 障害者の雇用の促進等に関する法律. e-Gov (法令ID 335AC0000000123).
   https://laws.e-gov.go.jp/law/335AC0000000123. Accessed 2026-10-31. Jurisdiction-specific example; applicability needs legal
   review.
@@ -218,6 +215,9 @@ The project MUST publish or keep an accessibility conformance statement giving i
 - **[WAI-EVAL]** "Evaluating Web Accessibility Overview". W3C Web Accessibility Initiative. https://www.w3.org/WAI/test-evaluate/.
   Accessed 2026-10-31.
   > "However, no tool alone can determine if a site meets accessibility standards. Knowledgeable human evaluation is required to determine if a site is accessible."
+- **[WAIC-JIS2016]** 「JIS X 8341-3:2016 解説」. ウェブアクセシビリティ基盤委員会 (WAIC). https://waic.jp/docs/jis2016/understanding/201604/.
+  Accessed 2026-10-31. States that JIS X 8341-3:2016 is identical to ISO/IEC 40500:2012 (WCAG 2.0).
+  > "『JIS X 8341-3:2016』は、『ISO/IEC 40500:2012』の一致規格になっている。"
 - **[WCAG22]** *Web Content Accessibility Guidelines (WCAG) 2.2*, W3C Recommendation, 12 December 2024. W3C.
   https://www.w3.org/TR/WCAG22/. Accessed 2026-10-31.
   > "If an input error is automatically detected, the item that is in error is identified and the error is described to the user in text." (Success Criterion 3.3.1 Error Identification)

@@ -33,7 +33,7 @@ pre-chosen solution.
 - **Gate:** G0
 - **Evidence:** a problem statement or discovery report, dated before the first feature commit, that says what is wrong today
   and for whom.
-- **Basis:** [GDS-DISC], [GDS-P1]. Level: author's judgement (sources support SHOULD).
+- **Basis:** [GOVUK-DISC], [GOVUK-P1]. Level: author's judgement (sources support SHOULD).
 
 ### PRD-2 · MUST · Measurable success criteria
 The project MUST state its success criteria (KPIs), each with a baseline, a target and the method and data source used to
@@ -48,21 +48,21 @@ The business case SHOULD estimate the value of solving the problem, including wh
 assumptions.
 - **Gate:** G0
 - **Evidence:** a business case or discovery note with a cost/value estimate and its listed assumptions.
-- **Basis:** [GDS-DISC].
+- **Basis:** [GOVUK-DISC].
 
 ### PRD-4 · SHOULD · User research written down and shared
 Discovery SHOULD include research with real current or prospective users, with the findings written down and shared with the
 team and sponsor.
 - **Gate:** G0
 - **Evidence:** a research plan, session notes or synthesis, and a findings document with its distribution recorded.
-- **Basis:** [USDS], [GDS-P1]. Sharing with the team and sponsor: author's judgement.
+- **Basis:** [USDS], [GOVUK-P1]. Sharing with the team and sponsor: author's judgement.
 
 ### PRD-5 · SHOULD · Feasibility and go/stop decision
 The project SHOULD list its hard and soft constraints (legislation, contracts, legacy technology, existing processes) and
 record a dated go/stop decision at the end of discovery.
 - **Gate:** G0
 - **Evidence:** a constraints register and a dated go/no-go decision record.
-- **Basis:** [GDS-DISC].
+- **Basis:** [GOVUK-DISC].
 
 ### PRD-6 · SHOULD · Written, versioned specification
 Requirements SHOULD be kept in a written specification under version control (in the repository, or in a document system linked
@@ -83,7 +83,7 @@ required by TRC-1.
 The specification MUST state what is in scope, what is out of scope, and explicit non-goals.
 - **Gate:** G0
 - **Evidence:** a scope section with in-scope, out-of-scope and non-goal lists; change requests refer to it.
-- **Basis:** [GDS-DISC]. Level: author's judgement (sources support SHOULD).
+- **Basis:** [GOVUK-DISC]. Level: author's judgement (sources support SHOULD).
 
 ### PRD-9 · MUST · Testable acceptance criteria
 Each functional requirement or user story MUST have acceptance criteria that can be shown to pass or fail.
@@ -141,13 +141,13 @@ Acceptance tests MAY be agreed with domain experts before implementation (ATDD/B
 ## Failure modes
 
 - **Solution-first projects.** Teams build a pre-defined solution without testing the problem; the real problem "might not be
-  the one you originally thought needed solving" [GDS-P1].
+  the one you originally thought needed solving" [GOVUK-P1].
 - **No success measure.** Without defined metrics, nobody can tell "whether the service is solving the problem it’s meant to
   solve" [GOVUK-P10].
 - **Untestable requirements.** "Natural languages are inherently ambiguous, but test case language is not." [SWEBOK]
 - **NFRs left implicit.** Performance, security and accessibility needs are discovered at UAT or in production. Author's
   judgement.
-- **Scope creep.** Nobody agreed "what is not part of the problem" [GDS-DISC].
+- **Scope creep.** Nobody agreed "what is not part of the problem" [GOVUK-DISC].
 - **UAT as a formality.** UAT is run late, by the developers rather than the users, with no recorded criteria. Author's
   judgement.
 
@@ -159,12 +159,12 @@ Acceptance tests MAY be agreed with domain experts before implementation (ATDD/B
   > "Given-When-Then is a style of representing tests - or as its advocates would say - specifying a system's behavior using SpecificationByExample ."
 - **[FOWLER-UBIQ]** UbiquitousLanguage. Martin Fowler, martinfowler.com, 31 October 2006. https://martinfowler.com/bliki/UbiquitousLanguage.html. Accessed 2026-10-31.
   > "the practice of building up a common, rigorous language between developers and users. This language should be based on the Domain Model used in the software"
-- **[GDS-DISC]** How the discovery phase works. Service Manual, UK Government Digital Service. https://www.gov.uk/service-manual/agile-delivery/how-the-discovery-phase-works. Accessed 2026-10-31.
+- **[GOVUK-DISC]** How the discovery phase works. Service Manual, UK Government Digital Service. https://www.gov.uk/service-manual/agile-delivery/how-the-discovery-phase-works. Accessed 2026-10-31.
   > "Before you commit to building a service, you need to understand the problem that needs to be solved." (introduction)
   > "Reframing the problem also includes agreeing what is not part of the problem." (Define the problem)
   > "During discovery, that means understanding how much the problem is currently costing." (Define the problem)
   > "If there’s a hard constraint which means you are not able to improve on the solution that’s currently available, it might be worth stopping at the end of discovery." (Understanding constraints)
-- **[GDS-P1]** Service Standard, 1. Understand users and their needs. UK Government Digital Service. https://www.gov.uk/service-manual/service-standard/point-1-understand-user-needs. Accessed 2026-10-31.
+- **[GOVUK-P1]** Service Standard, 1. Understand users and their needs. UK Government Digital Service. https://www.gov.uk/service-manual/service-standard/point-1-understand-user-needs. Accessed 2026-10-31.
   > "The real problem might not be the one you originally thought needed solving. Testing your assumptions early and often reduces the risk of building the wrong thing."
 - **[GOVUK-P10]** Service Standard, 10. Define what success looks like and publish performance data. UK Government Digital Service. https://www.gov.uk/service-manual/service-standard/point-10-define-success-publish-performance-data. Accessed 2026-10-31.
   > "Defining what good looks like and identifying appropriate metrics means that you’ll know whether the service is solving the problem it’s meant to solve." (Why it’s important)

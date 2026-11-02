@@ -90,6 +90,156 @@
       "method": "PDF text extracted with pdftotext (default and -layout); the quoted sentence is in a table cell split by text from the next column; read by hand and confirmed",
       "checked": "2026-10-31",
       "checked_by": "SomesH S (AI-assisted)"
+    },
+    {
+      "key": "APPI",
+      "file": "areas/06-privacy-and-data-protection.md",
+      "line": 217,
+      "sha256": "2ac0f14a7478df6fd11305008ac5ca92b09f5eab3d4c61bf6f5fa0a29630186f",
+      "url": "https://www.japaneselawtranslation.go.jp/en/laws/view/4241/en",
+      "method": "Checked with tools/check_citations.py from the owner's machine on 2026-11-03: the quote matched the live page exactly (area 06 run: 43 checked, 43 OK). GitHub-hosted runners receive HTTP 403 for this site's robots.txt, so the monthly check cannot read it (issue #2)",
+      "checked": "2026-11-03",
+      "checked_by": "SomesH S (AI-assisted)"
+    },
+    {
+      "key": "APPI",
+      "file": "areas/06-privacy-and-data-protection.md",
+      "line": 219,
+      "sha256": "127c477e0913e52277d73e859ae3d622265f3e47ee6cb1b9204d96321b9a9633",
+      "url": "https://www.japaneselawtranslation.go.jp/en/laws/view/4241/en",
+      "method": "Checked with tools/check_citations.py from the owner's machine on 2026-11-03: the quote matched the live page exactly (area 06 run: 43 checked, 43 OK). GitHub-hosted runners receive HTTP 403 for this site's robots.txt, so the monthly check cannot read it (issue #2)",
+      "checked": "2026-11-03",
+      "checked_by": "SomesH S (AI-assisted)"
+    },
+    {
+      "key": "APPI",
+      "file": "areas/06-privacy-and-data-protection.md",
+      "line": 221,
+      "sha256": "d6d47b532a7d3089816c979c779ac40ad0a4124cb42bb54f08caef1da7de2620",
+      "url": "https://www.japaneselawtranslation.go.jp/en/laws/view/4241/en",
+      "method": "Checked with tools/check_citations.py from the owner's machine on 2026-11-03: the quote matched the live page exactly (area 06 run: 43 checked, 43 OK). GitHub-hosted runners receive HTTP 403 for this site's robots.txt, so the monthly check cannot read it (issue #2)",
+      "checked": "2026-11-03",
+      "checked_by": "SomesH S (AI-assisted)"
+    },
+    {
+      "key": "APPI",
+      "file": "areas/06-privacy-and-data-protection.md",
+      "line": 223,
+      "sha256": "8fa2f977af76e16f39b0b7bfe3beeeaf439b6c2f4fa4976aaed6126710c27591",
+      "url": "https://www.japaneselawtranslation.go.jp/en/laws/view/4241/en",
+      "method": "Checked with tools/check_citations.py from the owner's machine on 2026-11-03: the quote matched the live page exactly (area 06 run: 43 checked, 43 OK). GitHub-hosted runners receive HTTP 403 for this site's robots.txt, so the monthly check cannot read it (issue #2)",
+      "checked": "2026-11-03",
+      "checked_by": "SomesH S (AI-assisted)"
+    },
+    {
+      "key": "APPI",
+      "file": "areas/06-privacy-and-data-protection.md",
+      "line": 225,
+      "sha256": "1441eb1197f7baeaa84c2562244d9e6005a7730cd7ed04c6285b1670ab59befd",
+      "url": "https://www.japaneselawtranslation.go.jp/en/laws/view/4241/en",
+      "method": "Checked with tools/check_citations.py from the owner's machine on 2026-11-03: the quote matched the live page exactly (area 06 run: 43 checked, 43 OK). GitHub-hosted runners receive HTTP 403 for this site's robots.txt, so the monthly check cannot read it (issue #2)",
+      "checked": "2026-11-03",
+      "checked_by": "SomesH S (AI-assisted)"
+    },
+    {
+      "key": "APPI",
+      "file": "areas/06-privacy-and-data-protection.md",
+      "line": 227,
+      "sha256": "469d6231dad7d057986a46663a381120d9e71eaeec938611c8dedd8b621d897a",
+      "url": "https://www.japaneselawtranslation.go.jp/en/laws/view/4241/en",
+      "method": "Checked with tools/check_citations.py from the owner's machine on 2026-11-03: the quote matched the live page exactly (area 06 run: 43 checked, 43 OK). GitHub-hosted runners receive HTTP 403 for this site's robots.txt, so the monthly check cannot read it (issue #2)",
+      "checked": "2026-11-03",
+      "checked_by": "SomesH S (AI-assisted)"
+    },
+    {
+      "key": "APPI",
+      "file": "areas/06-privacy-and-data-protection.md",
+      "line": 229,
+      "sha256": "756a0e3b826ffe36894e60a1992023597e660414e9bb147057cc939e53991c61",
+      "url": "https://www.japaneselawtranslation.go.jp/en/laws/view/4241/en",
+      "method": "Checked with tools/check_citations.py from the owner's machine on 2026-11-03: the quote matched the live page exactly (area 06 run: 43 checked, 43 OK). GitHub-hosted runners receive HTTP 403 for this site's robots.txt, so the monthly check cannot read it (issue #2)",
+      "checked": "2026-11-03",
+      "checked_by": "SomesH S (AI-assisted)"
+    },
+    {
+      "key": "APPI",
+      "file": "areas/06-privacy-and-data-protection.md",
+      "line": 231,
+      "sha256": "efd091bf50c707d6065d72af1293b6641be072668335d65d5d9bb3b7ead22262",
+      "url": "https://www.japaneselawtranslation.go.jp/en/laws/view/4241/en",
+      "method": "Checked with tools/check_citations.py from the owner's machine on 2026-11-03: the quote matched the live page exactly (area 06 run: 43 checked, 43 OK). GitHub-hosted runners receive HTTP 403 for this site's robots.txt, so the monthly check cannot read it (issue #2)",
+      "checked": "2026-11-03",
+      "checked_by": "SomesH S (AI-assisted)"
+    },
+    {
+      "key": "APPI",
+      "file": "areas/06-privacy-and-data-protection.md",
+      "line": 233,
+      "sha256": "595723a3ff483a0a094861251c69ce8ab611b7c6f7244ba2669790cf335f43e7",
+      "url": "https://www.japaneselawtranslation.go.jp/en/laws/view/4241/en",
+      "method": "Checked with tools/check_citations.py from the owner's machine on 2026-11-03: the quote matched the live page exactly (area 06 run: 43 checked, 43 OK). GitHub-hosted runners receive HTTP 403 for this site's robots.txt, so the monthly check cannot read it (issue #2)",
+      "checked": "2026-11-03",
+      "checked_by": "SomesH S (AI-assisted)"
+    },
+    {
+      "key": "APPI",
+      "file": "areas/06-privacy-and-data-protection.md",
+      "line": 235,
+      "sha256": "f909e8f1708d87e7e191542271ec709f68ed3ff55d8a4f1c126325a94a78a813",
+      "url": "https://www.japaneselawtranslation.go.jp/en/laws/view/4241/en",
+      "method": "Checked with tools/check_citations.py from the owner's machine on 2026-11-03: the quote matched the live page exactly (area 06 run: 43 checked, 43 OK). GitHub-hosted runners receive HTTP 403 for this site's robots.txt, so the monthly check cannot read it (issue #2)",
+      "checked": "2026-11-03",
+      "checked_by": "SomesH S (AI-assisted)"
+    },
+    {
+      "key": "APPI",
+      "file": "areas/06-privacy-and-data-protection.md",
+      "line": 237,
+      "sha256": "d55312849cc8de71255d1f68b54cb824947e7b2f86ac3ab9297ff5e13acbf36f",
+      "url": "https://www.japaneselawtranslation.go.jp/en/laws/view/4241/en",
+      "method": "Checked with tools/check_citations.py from the owner's machine on 2026-11-03: the quote matched the live page exactly (area 06 run: 43 checked, 43 OK). GitHub-hosted runners receive HTTP 403 for this site's robots.txt, so the monthly check cannot read it (issue #2)",
+      "checked": "2026-11-03",
+      "checked_by": "SomesH S (AI-assisted)"
+    },
+    {
+      "key": "APPI",
+      "file": "areas/06-privacy-and-data-protection.md",
+      "line": 239,
+      "sha256": "6c5f33ff739177cab9f85df59dc16adfb5927bce082d31839178d125cc6aea09",
+      "url": "https://www.japaneselawtranslation.go.jp/en/laws/view/4241/en",
+      "method": "Checked with tools/check_citations.py from the owner's machine on 2026-11-03: the quote matched the live page exactly (area 06 run: 43 checked, 43 OK). GitHub-hosted runners receive HTTP 403 for this site's robots.txt, so the monthly check cannot read it (issue #2)",
+      "checked": "2026-11-03",
+      "checked_by": "SomesH S (AI-assisted)"
+    },
+    {
+      "key": "APPI",
+      "file": "areas/06-privacy-and-data-protection.md",
+      "line": 241,
+      "sha256": "ba8aa9a36211b53686ff235b80971dab211b7698c5ef6e506349b25386921a94",
+      "url": "https://www.japaneselawtranslation.go.jp/en/laws/view/4241/en",
+      "method": "Checked with tools/check_citations.py from the owner's machine on 2026-11-03: the quote matched the live page exactly (area 06 run: 43 checked, 43 OK). GitHub-hosted runners receive HTTP 403 for this site's robots.txt, so the monthly check cannot read it (issue #2)",
+      "checked": "2026-11-03",
+      "checked_by": "SomesH S (AI-assisted)"
+    },
+    {
+      "key": "APPI",
+      "file": "areas/06-privacy-and-data-protection.md",
+      "line": 243,
+      "sha256": "a72dd8a254a6a74be8e5af4bbeb3e33ebee151fbf142ee8fdaf6278e17d9929c",
+      "url": "https://www.japaneselawtranslation.go.jp/en/laws/view/4241/en",
+      "method": "Checked with tools/check_citations.py from the owner's machine on 2026-11-03: the quote matched the live page exactly (area 06 run: 43 checked, 43 OK). GitHub-hosted runners receive HTTP 403 for this site's robots.txt, so the monthly check cannot read it (issue #2)",
+      "checked": "2026-11-03",
+      "checked_by": "SomesH S (AI-assisted)"
+    },
+    {
+      "key": "APPI",
+      "file": "areas/06-privacy-and-data-protection.md",
+      "line": 245,
+      "sha256": "0fb0c72ed9019c402c08d3487e52be6de4626a040ac3b534bbf787b6fc4d7a2a",
+      "url": "https://www.japaneselawtranslation.go.jp/en/laws/view/4241/en",
+      "method": "Checked with tools/check_citations.py from the owner's machine on 2026-11-03: the quote matched the live page exactly (area 06 run: 43 checked, 43 OK). GitHub-hosted runners receive HTTP 403 for this site's robots.txt, so the monthly check cannot read it (issue #2)",
+      "checked": "2026-11-03",
+      "checked_by": "SomesH S (AI-assisted)"
     }
   ]
 }

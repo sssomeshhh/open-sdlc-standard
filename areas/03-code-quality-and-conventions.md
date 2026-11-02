@@ -81,7 +81,7 @@ Function complexity SHOULD be limited by a measured threshold (for example cyclo
 justification), with file and function size monitored.
 - **Gate:** G1
 - **Evidence:** complexity checker configuration and its output; each exception has a justification.
-- **Basis:** [NIST-500-235].
+- **Basis:** [SP500-235].
 
 ### CQ-9 · SHOULD · No dead code
 The codebase SHOULD NOT contain dead code: unreachable code, unused exports, unused dependencies, commented-out code or retired
@@ -159,15 +159,15 @@ minimum: reviewed, tests pass, documentation updated, acceptance criteria met.
   > "On matters of style, the style guide is the absolute authority." (Principles)
 - **[ISO5055]** ISO/IEC 5055:2021 Information technology — Software measurement — Software quality measurement — Automated source code quality measures. ISO/IEC. https://www.iso.org/standard/80623.html. Accessed 2026-10-31. Paywalled; public abstract only. Mirror: https://committee.iso.org/standard/80623.html (verified 2026-10-31 on the committee.iso.org mirror; www.iso.org blocks automated access).
   > "The measures in this standard were calculated from detecting and counting violations of good architectural and coding practices in the source code that could result in unacceptable operational risks or excessive costs."
-- **[NIST-500-235]** Structured Testing: A Testing Methodology Using the Cyclomatic Complexity Metric, NIST SP 500-235. A. H. Watson, T. J. McCabe, NIST, August 1996. https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication500-235.pdf. Accessed 2026-10-31.
-  > "Overly complex modules are more prone to error, are harder to understand, are harder to test, and are harder to modify." (2.5)
-  > "The original limit of 10 as proposed by McCabe has significant supporting evidence, but limits as high as 15 have been used successfully as well." (2.5)
 - **[PEP8]** PEP 8 – Style Guide for Python Code. G. van Rossum, B. Warsaw, A. Coghlan, Python Software Foundation. https://peps.python.org/pep-0008/. Accessed 2026-10-31.
   > "code is read much more often than it is written." (A Foolish Consistency is the Hobgoblin of Little Minds)
   > "A style guide is about consistency. Consistency with this style guide is important. Consistency within a project is more important." (A Foolish Consistency is the Hobgoblin of Little Minds)
 - **[SCRUM]** The Scrum Guide (2020). Ken Schwaber and Jeff Sutherland. https://scrumguides.org/scrum-guide.html. Accessed 2026-10-31.
   > "The Definition of Done is a formal description of the state of the Increment when it meets the quality measures required for the product." (Commitment: Definition of Done)
   > "If a Product Backlog item does not meet the Definition of Done, it cannot be released or even presented at the Sprint Review." (Commitment: Definition of Done)
+- **[SP500-235]** Structured Testing: A Testing Methodology Using the Cyclomatic Complexity Metric, NIST SP 500-235. A. H. Watson, T. J. McCabe, NIST, August 1996. https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication500-235.pdf. Accessed 2026-10-31.
+  > "Overly complex modules are more prone to error, are harder to understand, are harder to test, and are harder to modify." (2.5)
+  > "The original limit of 10 as proposed by McCabe has significant supporting evidence, but limits as high as 15 have been used successfully as well." (2.5)
 - **[SSDF]** NIST SP 800-218 Secure Software Development Framework (SSDF) Version 1.1. M. Souppaya, K. Scarfone, D. Dodson, NIST, February 2022. https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218.pdf (landing page: https://csrc.nist.gov/pubs/sp/800/218/final). Accessed 2026-10-31.
   > "Use a static analysis tool to automatically check code for vulnerabilities and compliance with the organization’s secure coding standards with a human reviewing the issues reported by the tool" (PW.7.2, Example 4)
 - **[SWE-STATIC]** Software Engineering at Google, Ch. 20 "Static Analysis". T. Winters, T. Manshreck, H. Wright (eds.), O'Reilly 2020, free online edition. https://abseil.io/resources/swe-book/html/ch20.html. Accessed 2026-10-31.

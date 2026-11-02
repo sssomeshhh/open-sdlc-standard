@@ -64,7 +64,7 @@ and a last-review date, and which is reviewed on a schedule and after significan
 - **Gate:** G0 · **Trigger:** each significant change
 - **Evidence:** the register with those fields filled per entry; the review interval and what counts as significant
   change stated in the register; review dates within that interval.
-- **Basis:** [NISTIR8286], [SP800-53] (RA-3, PM-9). Level: author's judgement (sources support SHOULD).
+- **Basis:** [IR8286], [SP800-53] (RA-3, PM-9). Level: author's judgement (sources support SHOULD).
 
 ### PRC-6 · SHOULD · Small batches
 Work SHOULD be split into batches that can be completed and checked in one week or less.
@@ -163,7 +163,7 @@ Work in progress SHOULD be visible to the whole team on a shared board.
   2026-10-31.
   > "Visual management boards can create a shared understanding of where the team is" (introduction)
   > "Displays should be used to drive improvements (fix the problem), not become a goal in themselves (keep the board green)." (Common pitfalls with visual management)
-- **[NISTIR8286]** NIST IR 8286 Rev. 1, Integrating Cybersecurity and Enterprise Risk Management (ERM). NIST, December
+- **[IR8286]** NIST IR 8286 Rev. 1, Integrating Cybersecurity and Enterprise Risk Management (ERM). NIST, December
   2025. https://csrc.nist.gov/pubs/ir/8286/r1/final. Accessed 2026-10-31.
   > "This document includes guidance on the use of risk registers to set out cybersecurity risk"
 - **[SCRUM]** The Scrum Guide (2020). Ken Schwaber and Jeff Sutherland. https://scrumguides.org/scrum-guide.html.

@@ -115,14 +115,14 @@ Every log and telemetry store MUST have a defined retention period, set in confi
 legal need.
 - **Gate:** G3
 - **Evidence:** retention values in the storage or platform configuration; the written justification.
-- **Basis:** [NIST-92], [OWASP-CS-LOGGING]. Level: author's judgement; no general-purpose source gives a retention period, so the period
+- **Basis:** [SP800-92], [OWASP-CS-LOGGING]. Level: author's judgement; no general-purpose source gives a retention period, so the period
   itself is set per project.
 
 ### OBS-13 · SHOULD · Written log-management plan
 The project SHOULD have a written log-management plan stating which logs are kept, where, for how long, and who reviews them.
 - **Gate:** G3
 - **Evidence:** the plan document, linked from the project documentation.
-- **Basis:** [NIST-92], [NIST-92R1] (the Rev. 1 planning guide is an initial public draft, not a final publication).
+- **Basis:** [SP800-92], [SP800-92R1] (the Rev. 1 planning guide is an initial public draft, not a final publication).
 
 ### OBS-14 · SHOULD · Product telemetry tied to success criteria
 Product and usage telemetry SHOULD measure the success criteria defined for the product (Area 1), with that data used when
@@ -173,14 +173,6 @@ any consent or offer any opt-out that applicable law requires.
   Service. https://www.gov.uk/service-manual/service-standard/point-10-define-success-publish-performance-data. Accessed 2026-10-31.
   > "identify metrics which will indicate how well the service is solving the problem it's meant to solve" (What it means)
   > "use performance data to make decisions about how to fix problems and improve the service" (What it means)
-- **[NIST-92]** NIST SP 800-92, *Guide to Computer Security Log Management*, September 2006 (final). NIST.
-  https://csrc.nist.gov/pubs/sp/800/92/final (full text: https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-92.pdf).
-  Accessed 2026-10-31.
-  > "This publication seeks to assist organizations in understanding the need for sound computer security log management." (1.2)
-  > "System-level administrators need to configure log sources so that they capture the needed information in the desired format and locations, as well as retain the information for the appropriate period of time." (5.7)
-- **[NIST-92R1]** NIST SP 800-92 Rev. 1 (Initial Public Draft), *Cybersecurity Log Management Planning Guide*, 11 October 2023.
-  NIST. https://csrc.nist.gov/pubs/sp/800/92/r1/ipd. Accessed 2026-10-31. Draft; not final.
-  > "This document defines a playbook intended to help any organization plan improvements to its cybersecurity log management."
 - **[OTEL-LOGS]** "OpenTelemetry Logging" (specification). OpenTelemetry. https://opentelemetry.io/docs/specs/otel/logs/.
   Accessed 2026-10-31.
   > "OpenTelemetry extends this practice to logs where possible by including TraceId and SpanId in the LogRecords." (Log Correlation)
@@ -212,6 +204,14 @@ any consent or offer any opt-out that applicable law requires.
   > "電気通信事業を営む者（ウェブサイト運営者、アプリケーション提供者等）は、利用者の端末に外部送信を指示するプログラムを送る際は、あらかじめ、送信される利用者に関する情報の内容等を、通知・公表（利用者が容易に知り得る状態に置く）等しなければなりません。" (introduction)
   > "改正電気通信事業法の施行（2023年6月16日）" (introduction)
   > "通知又は公表（利用者が容易に知り得る状態に置く）、同意取得、オプトアウト措置のいずれかを、利用者に対して行ってください。" (introduction)
+- **[SP800-92]** NIST SP 800-92, *Guide to Computer Security Log Management*, September 2006 (final). NIST.
+  https://csrc.nist.gov/pubs/sp/800/92/final (full text: https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-92.pdf).
+  Accessed 2026-10-31.
+  > "This publication seeks to assist organizations in understanding the need for sound computer security log management." (1.2)
+  > "System-level administrators need to configure log sources so that they capture the needed information in the desired format and locations, as well as retain the information for the appropriate period of time." (5.7)
+- **[SP800-92R1]** NIST SP 800-92 Rev. 1 (Initial Public Draft), *Cybersecurity Log Management Planning Guide*, 11 October 2023.
+  NIST. https://csrc.nist.gov/pubs/sp/800/92/r1/ipd. Accessed 2026-10-31. Draft; not final.
+  > "This document defines a playbook intended to help any organization plan improvements to its cybersecurity log management."
 - **[SRE-ALERT]** "Alerting on SLOs", *The Site Reliability Workbook*, ch. 5. Google. https://sre.google/workbook/alerting-on-slos/.
   Accessed 2026-10-31.
   > "The proportion of events detected that were significant." (Ch. 5, Alerting Considerations)

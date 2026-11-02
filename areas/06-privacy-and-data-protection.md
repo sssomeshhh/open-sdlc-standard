@@ -108,7 +108,7 @@ unless the inventory explicitly permits it for that data class.
 
 - **Gate:** G3
 - **Evidence:** log sampling; review of URL patterns; analytics and tracker configuration review.
-- **Basis:** [ASVS5] 14.2.1, 14.2.3, [CS-LOGGING].
+- **Basis:** [ASVS5] 14.2.1, 14.2.3, [OWASP-CS-LOGGING].
 
 ### PRV-9 · MUST · No personal data in source control
 
@@ -200,7 +200,7 @@ A development or test environment that holds live personal data MUST be protecte
 - Personal-data exports left in the working tree or committed to the repository; history rewrites do not reach old
   clones. [GH-SENSITIVE]
 - Production databases copied into development or test without approval or equal protection. [SP800-53]
-- Full request bodies or tokens logged, so logs become an uncontrolled personal-data store. [CS-LOGGING]
+- Full request bodies or tokens logged, so logs become an uncontrolled personal-data store. [OWASP-CS-LOGGING]
 - Keep everything forever: no retention period and no deletion, contrary to GDPR storage limitation and short of
   APPI's best-efforts duty to delete data no longer needed. [GDPR], [APPI]
 - A leak treated as purely technical, missing the legal reporting duty. [APPI], [GDPR]
@@ -254,11 +254,6 @@ A development or test environment that holds live personal data MUST be protecte
   > "Verify that sensitive information is subject to data retention classification, ensuring that outdated or unnecessary data is deleted automatically, on a defined schedule, or as the situation requires." (V14.2 General Data Protection)
 
   > "including logging when sensitive data is accessed (without logging the sensitive data itself)." (V16.3 Security Events)
-- **[CS-LOGGING]** Logging Cheat Sheet. OWASP Cheat Sheet Series.
-  https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html . Accessed 2026-10-31. The item after the
-  sentence is quoted from the list that follows it.
-  > "The following should usually not be recorded directly in the logs, but instead should be removed, masked, sanitized, hashed, or encrypted:" (Data to exclude)
-  > "Sensitive personal data and some forms of personally identifiable information (PII) e.g. health, government identifiers, vulnerable people" (Data to exclude)
 - **[GDPR]** Regulation (EU) 2016/679 (General Data Protection Regulation), OJ L 119, 4.5.2016.
   https://eur-lex.europa.eu/eli/reg/2016/679/oj (text as fetched from
   http://publications.europa.eu/resource/celex/32016R0679). Accessed 2026-10-31.
@@ -290,6 +285,11 @@ A development or test environment that holds live personal data MUST be protecte
   https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository .
   Accessed 2026-10-31.
   > "If a fellow developer has a clone from before your rewrite, and after your rewrite simply runs git pull followed by git push , the sensitive data will return."
+- **[OWASP-CS-LOGGING]** Logging Cheat Sheet. OWASP Cheat Sheet Series.
+  https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html . Accessed 2026-10-31. The item after the
+  sentence is quoted from the list that follows it.
+  > "The following should usually not be recorded directly in the logs, but instead should be removed, masked, sanitized, hashed, or encrypted:" (Data to exclude)
+  > "Sensitive personal data and some forms of personally identifiable information (PII) e.g. health, government identifiers, vulnerable people" (Data to exclude)
 - **[OWASP-LLM02]** LLM02:2025 Sensitive Information Disclosure, OWASP Top 10 for LLM Applications 2025. OWASP GenAI
   Security Project. https://genai.owasp.org/llmrisk/llm022025-sensitive-information-disclosure/ . Accessed 2026-10-31.
   > "Provide guidance on avoiding the input of sensitive information." (1. Educate Users on Safe LLM Usage)

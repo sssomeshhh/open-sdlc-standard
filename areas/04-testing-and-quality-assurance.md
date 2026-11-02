@@ -32,14 +32,14 @@ The project MUST keep a written test strategy stating which test levels exist (f
 manual), what each covers, and where each runs.
 - **Gate:** G1
 - **Evidence:** a TESTING document, and test folders and pipeline jobs that match it.
-- **Basis:** [PYRAMID], [SWE-TEST]. Level: author's judgement (sources support
+- **Basis:** [FOWLER-PYRAMID], [SWE-TEST]. Level: author's judgement (sources support
   SHOULD).
 
 ### TST-2 · SHOULD · Pyramid-shaped suite
 Most automated tests SHOULD be fast, narrow unit tests, with fewer integration tests and fewest end-to-end tests.
 - **Gate:** G2
 - **Evidence:** test counts per level are roughly pyramid-shaped (for example around 80% unit tests).
-- **Basis:** [PYRAMID], [SWE-TEST].
+- **Basis:** [FOWLER-PYRAMID], [SWE-TEST].
 
 ### TST-3 · MUST · Critical rules tested
 Critical business rules (for example permissions, calculations and state transitions) MUST have automated tests, with coverage
@@ -52,7 +52,7 @@ reports used to find untested critical code rather than as a numeric target alon
 Every fixed defect MUST get a test, at the lowest practical level, that fails before the fix and passes after it.
 - **Gate:** G1
 - **Evidence:** sampled bug-fix PRs each contain a new or changed test.
-- **Basis:** [PYRAMID], [SWEBOK], [SWE-TEST]. Level: author's judgement (sources support SHOULD).
+- **Basis:** [FOWLER-PYRAMID], [SWEBOK], [SWE-TEST]. Level: author's judgement (sources support SHOULD).
 
 ### TST-5 · MUST · Flaky tests handled
 Non-deterministic (flaky) tests MUST be tracked and fixed or quarantined within a project-set limit in working days, not
@@ -119,7 +119,7 @@ into the backlog.
 
 ## Failure modes
 
-- **Ice-cream cone.** Many end-to-end tests and few unit tests make the suite slow and unreliable [SWE-TEST], [PYRAMID].
+- **Ice-cream cone.** Many end-to-end tests and few unit tests make the suite slow and unreliable [SWE-TEST], [FOWLER-PYRAMID].
 - **Coverage as a target.** "high coverage numbers are too easy to reach with low quality testing." [FOWLER-COV]
 - **Flaky tests tolerated.** "as you approach 1% flakiness, the tests begin to lose value" [SWE-TEST]; non-deterministic tests
   are "a virulent infection that can completely ruin your entire test suite" [FOWLER-NONDET].
@@ -146,15 +146,15 @@ into the backlog.
   > "high coverage numbers are too easy to reach with low quality testing." (Test Coverage)
 - **[FOWLER-NONDET]** Eradicating Non-Determinism in Tests. Martin Fowler, martinfowler.com, 14 April 2011. https://martinfowler.com/articles/nonDeterminism.html. Accessed 2026-10-31.
   > "Non-deterministic tests have two problems, firstly they are useless, secondly they are a virulent infection that can completely ruin your entire test suite."
+- **[FOWLER-PYRAMID]** TestPyramid. Martin Fowler, martinfowler.com, 1 May 2012. https://martinfowler.com/bliki/TestPyramid.html. Accessed 2026-10-31.
+  > "Its essential point is that you should have many more low-level UnitTests than high level BroadStackTests running through a GUI." (Test Pyramid)
+  > "before fixing a bug exposed by a high level test, you should replicate the bug with a unit test. Then the unit test ensures the bug stays dead." (Test Pyramid)
 - **[OWASP-ASVS]** Application Security Verification Standard (project page). OWASP. https://owasp.org/www-project-application-security-verification-standard/. Accessed 2026-10-31.
   > "The OWASP Application Security Verification Standard (ASVS) Project provides a basis for testing web application technical security controls and also provides developers with a list of requirements for secure development."
 - **[OWASP-WSTG]** Web Security Testing Guide (project page). OWASP. https://owasp.org/www-project-web-security-testing-guide/. Accessed 2026-10-31.
   > "The Web Security Testing Guide (WSTG) Project produces the premier cybersecurity testing resource for web application developers and security professionals."
 - **[PRACTICAL-PYRAMID]** The Practical Test Pyramid. Ham Vocke, martinfowler.com, 26 February 2018. https://martinfowler.com/articles/practical-test-pyramid.html. Accessed 2026-10-31.
   > "Automated contract tests make sure that the implementations on the consumer and provider side still stick to the defined contract."
-- **[PYRAMID]** TestPyramid. Martin Fowler, martinfowler.com, 1 May 2012. https://martinfowler.com/bliki/TestPyramid.html. Accessed 2026-10-31.
-  > "Its essential point is that you should have many more low-level UnitTests than high level BroadStackTests running through a GUI." (Test Pyramid)
-  > "before fixing a bug exposed by a high level test, you should replicate the bug with a unit test. Then the unit test ensures the bug stays dead." (Test Pyramid)
 - **[SSDF]** NIST SP 800-218 Secure Software Development Framework (SSDF) Version 1.1. M. Souppaya, K. Scarfone, D. Dodson, NIST, February 2022. https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218.pdf (landing page: https://csrc.nist.gov/pubs/sp/800/218/final). Accessed 2026-10-31.
   > "Scope the testing, design the tests, perform the testing, and document the results, including recording and triaging all discovered issues and recommended remediations" (PW.8.2)
   > "Incorporate tests for previously reported vulnerabilities into the project’s test suite to ensure that errors are not reintroduced." (PW.8.2, Example 3)

@@ -105,7 +105,7 @@ Build-vs-buy decisions and major technology choices SHOULD be documented, includ
 choice can be reversed later.
 - **Gate:** G1 · **Trigger:** each new major component, technology or vendor choice
 - **Evidence:** an ADR or decision note per major component or vendor, with a cost section and an exit note.
-- **Basis:** [GDS-P11].
+- **Basis:** [GOVUK-P11].
 
 ### ARC-12 · MUST · Vendored code marked and licensed
 Vendored or copied third-party code MUST sit in a clearly marked location together with its licence, origin, version, and a
@@ -153,7 +153,7 @@ Each vendored package MUST have a named owner who monitors it for upstream vulne
   > "Important: All third party code must have a license ." (introduction)
   > "Monitor Vulnerabilities: You need to monitor upstream source code for security vulnerabilities." (introduction)
   > "Do not expect to check in open source code at Google and never have to touch it or maintain it." (introduction)
-- **[GDS-P11]** Service Standard, 11. Choose the right tools and technology. UK Government Digital Service. https://www.gov.uk/service-manual/service-standard/point-11-choose-the-right-tools-and-technology. Accessed 2026-10-31.
+- **[GOVUK-P11]** Service Standard, 11. Choose the right tools and technology. UK Government Digital Service. https://www.gov.uk/service-manual/service-standard/point-11-choose-the-right-tools-and-technology. Accessed 2026-10-31.
   > "be able to show that they’ve made good decisions about what technology to build and what to buy, including use of common platforms where appropriate" (What it means)
   > "understand total cost of ownership of the technology and preserve the ability to make different choices in future" (What it means)
 - **[ISO42010]** ISO/IEC/IEEE 42010:2022 Software, systems and enterprise — Architecture description. ISO/IEC/IEEE. https://www.iso.org/standard/74393.html. Accessed 2026-10-31. Paywalled; public abstract only. Mirror: https://committee.iso.org/standard/74393.html (verified 2026-10-31 on the committee.iso.org mirror; www.iso.org blocks automated access).

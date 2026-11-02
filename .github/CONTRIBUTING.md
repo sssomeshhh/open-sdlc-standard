@@ -78,9 +78,9 @@ SHOULD NOT are headed MUST and SHOULD).
    (`RFC3339` before `RFC8259`, `12F-2` before `12F-10`). Number parts of a key use Arabic numerals. `check_structure.py`
    enforces the order.
 8. **Keys.** A key starts with a prefix for the publisher or publication series, followed by a short name or number:
-   for example `GH-` for GitHub Docs, `GOVUK-` for GOV.UK, `OWASP-CS-` for the OWASP Cheat Sheet Series and `SP800-` for
-   NIST Special Publications 800. Use the prefix already used for the same publisher; a well-known document may keep its
-   own name (for example `SSDF`, `WCAG22`).
+   for example `GH-` for GitHub Docs, `GOVUK-` for GOV.UK, `OWASP-CS-` for the OWASP Cheat Sheet Series, `SP800-` for
+   NIST Special Publications 800 and `SRE-` for Google's SRE book. Use the prefix already used for the same publisher or
+   series; a well-known document may keep its own name (for example `SSDF`, `WCAG22`).
 
 ## Pull requests
 

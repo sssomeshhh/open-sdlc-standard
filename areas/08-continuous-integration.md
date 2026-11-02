@@ -72,7 +72,7 @@ infrastructure-as-code or container image scanning where relevant), as required 
 - **Gate:** G1
 - **Evidence:** a workflow job for each check; results shown on pull requests; the dependency review check required.
   What each scan covers: see SEC-9 to SEC-12.
-- **Basis:** [CS-CICD], [GH-DEPREVIEW], [SSDF].
+- **Basis:** [OWASP-CS-CICD], [GH-DEPREVIEW], [SSDF].
 
 ### CI-6 · MUST · Main kept green
 
@@ -152,7 +152,7 @@ triggered it.
 
 - **Gate:** G1
 - **Evidence:** the log retention setting; run records naming the trigger and actor.
-- **Basis:** [CS-SECRETS]; [OWASP-CICD10] is cited for the risk name only (CICD-SEC-10, a heading). Retention for
+- **Basis:** [OWASP-CS-SECRETS]; [OWASP-CICD10] is cited for the risk name only (CICD-SEC-10, a heading). Retention for
   audit: author's judgement.
 
 ### CI-15 · MAY · Merge queue on busy branches
@@ -187,12 +187,6 @@ dependencies.
 
 ## References
 
-- **[CS-CICD]** CI/CD Security Cheat Sheet. OWASP Cheat Sheet Series.
-  https://cheatsheetseries.owasp.org/cheatsheets/CI_CD_Security_Cheat_Sheet.html . Accessed 2026-10-31.
-  > "Incorporate language appropriate SAST, DAST, IaC vulnerability scanning and related tools into the pipeline."
-- **[CS-SECRETS]** Secrets Management Cheat Sheet. OWASP Cheat Sheet Series.
-  https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html . Accessed 2026-10-31.
-  > "Additionally, a CI/CD pipeline run should be easily attributable to the one who has defined the job or triggered it to detect who has tried to exfiltrate secrets or manipulate them."
 - **[DORA-CI]** Capabilities: Continuous integration. DORA (Google Cloud).
   https://dora.dev/capabilities/continuous-integration/ . Accessed 2026-10-31.
   > "Each commit should trigger a series of automated tests that provide feedback in a few minutes." (How to implement CI)
@@ -253,6 +247,12 @@ dependencies.
   > "CICD-SEC-4: Poisoned Pipeline Execution (PPE)" (Top 10 risks)
 
   > "CICD-SEC-10: Insufficient Logging and Visibility" (Top 10 risks)
+- **[OWASP-CS-CICD]** CI/CD Security Cheat Sheet. OWASP Cheat Sheet Series.
+  https://cheatsheetseries.owasp.org/cheatsheets/CI_CD_Security_Cheat_Sheet.html . Accessed 2026-10-31.
+  > "Incorporate language appropriate SAST, DAST, IaC vulnerability scanning and related tools into the pipeline."
+- **[OWASP-CS-SECRETS]** Secrets Management Cheat Sheet. OWASP Cheat Sheet Series.
+  https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html . Accessed 2026-10-31.
+  > "Additionally, a CI/CD pipeline run should be easily attributable to the one who has defined the job or triggered it to detect who has tried to exfiltrate secrets or manipulate them."
 - **[SSDF]** NIST SP 800-218, Secure Software Development Framework (SSDF) Version 1.1. NIST, February 2022.
   https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218.pdf
   (landing page: https://csrc.nist.gov/pubs/sp/800/218/final). Accessed 2026-10-31.

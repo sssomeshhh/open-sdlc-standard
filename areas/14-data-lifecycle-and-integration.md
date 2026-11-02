@@ -44,7 +44,7 @@ Inbound data from any source, internal feeds and partner systems included, MUST 
 an allowlist of what is accepted, at the trust boundary, before it is processed or stored.
 - **Gate:** G2
 - **Evidence:** validation code and tests that include rejected-record cases; an import report listing rejected records and why.
-- **Basis:** [OWASP-IV].
+- **Basis:** [OWASP-CS-INPUT].
 
 ### DAT-4 · MUST · Idempotent imports and retryable writes
 Imports and any other write that can be retried MUST be idempotent: running the same import or request again has the same effect
@@ -147,7 +147,7 @@ before and after), a rollback path, and sign-off by the data owner.
 - Treating a fixed offset as a time zone for future events, so recurring events drift when time-zone rules change [W3C-TZ],
   [IANA-TZ].
 - Imports that are not idempotent, so a retry after a partial failure duplicates or half-applies data [RFC9110].
-- Trusting internal or partner feeds without validation [OWASP-IV].
+- Trusting internal or partner feeds without validation [OWASP-CS-INPUT].
 - Patching bad source data downstream instead of fixing it at source, so the fix has to be repeated on every load [GOVUK-DQ].
 - No retention period, so data from old imports, personal data included, is kept forever [APPI-JA] Art. 22.
 
@@ -172,7 +172,7 @@ before and after), a rollback path, and sign-off by the data owner.
   HTTPAPI Working Group. https://datatracker.ietf.org/doc/draft-ietf-httpapi-idempotency-key-header/. Accessed 2026-10-31.
   Internet-Draft (expires 25 April 2027); work in progress, not an RFC.
   > "The HTTP Idempotency-Key request header field can be used to make non-idempotent HTTP methods such as POST or PATCH fault-tolerant."
-- **[OWASP-IV]** "Input Validation Cheat Sheet". OWASP.
+- **[OWASP-CS-INPUT]** "Input Validation Cheat Sheet". OWASP.
   https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html. Accessed 2026-10-31.
   > "Validate data from internal APIs, partner feeds, queues, and stored records when it crosses a trust boundary." (Common Pitfalls)
   > "Validate both syntax (the expected type and format) and semantics (whether the value makes sense for the operation)." (Input Validation Strategies)

@@ -64,12 +64,12 @@ and recall of alerts reviewed at an interval the project sets.
 - **Basis:** [SRE-ALERT].
 
 ### OBS-6 · MUST · Redaction before telemetry is written
-The telemetry pipeline MUST remove, mask or hash secrets (SEC-7), session identifiers [CS-LOGGING] and personal data not
+The telemetry pipeline MUST remove, mask or hash secrets (SEC-7), session identifiers [OWASP-CS-LOGGING] and personal data not
 permitted by PRV-8 before logs, metrics and traces are written or exported.
 - **Gate:** G2
 - **Evidence:** redaction configuration or tests; a search of a production log sample showing no tokens or session IDs, and no
   personal data such as e-mail addresses except where the inventory permits it (PRV-8).
-- **Basis:** [CS-LOGGING], [OTEL-SENS].
+- **Basis:** [OWASP-CS-LOGGING], [OTEL-SENS].
 
 ### OBS-7 · SHOULD · Review what instrumentation libraries collect
 Before a third-party instrumentation or analytics library is adopted, and when it is upgraded, the team SHOULD review what
@@ -84,7 +84,7 @@ timestamp in an international format with UTC or an explicit offset (format deta
 - **Gate:** G2
 - **Evidence:** time-synchronisation (for example NTP) configuration or the platform's documented equivalent; log timestamps in
   RFC 3339 form.
-- **Basis:** [CS-LOGGING].
+- **Basis:** [OWASP-CS-LOGGING].
 
 ### OBS-9 · SHOULD · Correlated logs and traces
 Request context SHOULD be propagated across service boundaries with W3C Trace Context, with the trace and span IDs written into
@@ -106,7 +106,7 @@ detected, with read access restricted to named roles.
 - **Gate:** G3
 - **Evidence:** storage settings (write-once storage, or tamper detection such as hash chaining); the access policy listing who can
   read and who can delete; audit logs stored apart from the application's own writable data.
-- **Basis:** [CS-LOGGING]. Restriction to named roles: author's judgement (the source asks for restricted, periodically reviewed
+- **Basis:** [OWASP-CS-LOGGING]. Restriction to named roles: author's judgement (the source asks for restricted, periodically reviewed
   read privileges).
 - Note: this is the single rule for protecting audit logs; SEC-14 points here.
 
@@ -115,7 +115,7 @@ Every log and telemetry store MUST have a defined retention period, set in confi
 legal need.
 - **Gate:** G3
 - **Evidence:** retention values in the storage or platform configuration; the written justification.
-- **Basis:** [NIST-92], [CS-LOGGING]. Level: author's judgement; no general-purpose source gives a retention period, so the period
+- **Basis:** [NIST-92], [OWASP-CS-LOGGING]. Level: author's judgement; no general-purpose source gives a retention period, so the period
   itself is set per project.
 
 ### OBS-13 · SHOULD · Written log-management plan
@@ -160,24 +160,15 @@ any consent or offer any opt-out that applicable law requires.
   action [SRE-MON].
 - Reporting average latency only, which hides slow tail requests [SRE-MON].
 - Logs from separate components with no shared request ID, so they cannot be correlated [OTEL-LOGS].
-- Tokens, passwords or personal data written into logs or traces, including by third-party instrumentation [CS-LOGGING], [OTEL-SENS].
+- Tokens, passwords or personal data written into logs or traces, including by third-party instrumentation [OWASP-CS-LOGGING], [OTEL-SENS].
 - Audit logs kept in the same writable store that the application and its administrators can change, so tampering cannot be
-  detected [CS-LOGGING].
+  detected [OWASP-CS-LOGGING].
 - Usage analytics added with no KPI behind it, or with no privacy notice [GOVUK-P10], [SOUMU-GAIBU].
 
 ## References
 - **[12F-11]** "XI. Logs", The Twelve-Factor App. Adam Wiggins. https://12factor.net/logs. Accessed 2026-10-31.
   > "Logs are the stream of aggregated, time-ordered events" (Treat logs as event streams)
   > "A twelve-factor app never concerns itself with routing or storage of its output stream." (Treat logs as event streams)
-- **[CS-LOGGING]** "Logging Cheat Sheet", OWASP Cheat Sheet Series. OWASP.
-  https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html. Accessed 2026-10-31.
-  > "Session identification values" (Data to exclude)
-  > "Sensitive personal data and some forms of personally identifiable information (PII)" (Data to exclude)
-  > "Synchronize time across all servers and devices" (Event collection)
-  > "Log date and time (international format)" (Event attributes)
-  > "Build in tamper detection so you know if a record has been modified or deleted" (Protection)
-  > "The privileges to read log data should be restricted and reviewed periodically" (Protection)
-  > "Log data, temporary debug logs, and backups/copies/extractions, must not be destroyed before the duration of the required data retention period, and must not be kept beyond this time." (Disposal of logs)
 - **[GOVUK-P10]** "10. Define what success looks like and publish performance data", GOV.UK Service Standard. Government Digital
   Service. https://www.gov.uk/service-manual/service-standard/point-10-define-success-publish-performance-data. Accessed 2026-10-31.
   > "identify metrics which will indicate how well the service is solving the problem it's meant to solve" (What it means)
@@ -206,6 +197,15 @@ any consent or offer any opt-out that applicable law requires.
   Accessed 2026-10-31.
   > "you are responsible for understanding and reviewing the telemetry data emitted by any instrumentation libraries you use" (Your responsibility)
   > "Only collect data that serves an observability purpose." (Data minimization)
+- **[OWASP-CS-LOGGING]** "Logging Cheat Sheet", OWASP Cheat Sheet Series. OWASP.
+  https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html. Accessed 2026-10-31.
+  > "Session identification values" (Data to exclude)
+  > "Sensitive personal data and some forms of personally identifiable information (PII)" (Data to exclude)
+  > "Synchronize time across all servers and devices" (Event collection)
+  > "Log date and time (international format)" (Event attributes)
+  > "Build in tamper detection so you know if a record has been modified or deleted" (Protection)
+  > "The privileges to read log data should be restricted and reviewed periodically" (Protection)
+  > "Log data, temporary debug logs, and backups/copies/extractions, must not be destroyed before the duration of the required data retention period, and must not be kept beyond this time." (Disposal of logs)
 - **[SOUMU-GAIBU]** 「外部送信規律」 (external-transmission rule). Ministry of Internal Affairs and Communications (総務省), Japan.
   https://www.soumu.go.jp/main_sosiki/joho_tsusin/d_syohi/gaibusoushin_kiritsu.html. Accessed 2026-10-31. Jurisdiction-specific
   example; applicability needs legal review.

@@ -38,7 +38,7 @@ access controls change.
 - **Gate:** G1 · **Trigger:** each change to data flows, trust boundaries or access controls
 - **Evidence:** a dated threat model (for example a data-flow diagram, threats and mitigations) stored with the system's
   documentation; its change history shows a revision after each such design change.
-- **Basis:** [SSDF], [CS-THREAT], [T10-A06]. Level: author's judgement (sources support SHOULD).
+- **Basis:** [SSDF], [OWASP-CS-THREAT], [T10-A06]. Level: author's judgement (sources support SHOULD).
 
 ### SEC-2 · MUST · Authorisation rules documented
 
@@ -56,7 +56,7 @@ Authorisation MUST be enforced on a trusted server-side layer on every request, 
 - **Gate:** G2
 - **Evidence:** central server-side authorisation checks in code; no endpoint relies on client-side checks; automated
   tests for denied cases, both horizontal (another user's data) and vertical (a higher role's function).
-- **Basis:** [ASVS5] 8.3.1, [CS-AUTHZ], [T10-A01].
+- **Basis:** [ASVS5] 8.3.1, [OWASP-CS-AUTHZ], [T10-A01].
 
 ### SEC-4 · MUST · Vetted authentication mechanism
 
@@ -75,7 +75,7 @@ provider.
 - **Gate:** G3
 - **Evidence:** identity-provider or application configuration showing MFA enforced for all users; any exempt group is
   covered by a valid waiver (README, "Deviations and waivers"); a gap waiver is one-off and time-limited.
-- **Basis:** [CS-AUTHN]. Level: author's judgement (sources support SHOULD).
+- **Basis:** [OWASP-CS-AUTHN]. Level: author's judgement (sources support SHOULD).
 
 ### SEC-6 · MUST · Server-side session expiry
 
@@ -85,7 +85,7 @@ and cannot be used afterwards. Session identifier renewal: see SEC-18.
 - **Gate:** G2
 - **Evidence:** session configuration with idle and absolute timeout values and their rationale; a test or manual check
   that a session token is rejected after logout and after expiry.
-- **Basis:** [CS-SESSION], [ASVS5] 7.4.1.
+- **Basis:** [OWASP-CS-SESSION], [ASVS5] 7.4.1.
 
 ### SEC-7 · MUST · No secrets in code or logs
 
@@ -95,7 +95,7 @@ control, or logs. Build artifacts and images: see BLD-13.
 - **Gate:** G1
 - **Evidence:** a clean secret-scan report over the full repository history (see SEC-9); application code reads secrets
   from the environment or a secrets store (see Area 10); a sample of logs contains no tokens or credentials.
-- **Basis:** [ASVS5] 13.3.1, [CS-SECRETS], [CS-LOGGING].
+- **Basis:** [ASVS5] 13.3.1, [OWASP-CS-SECRETS], [OWASP-CS-LOGGING].
 
 ### SEC-8 · MUST · Secret rotation, and revoke first on exposure
 
@@ -105,7 +105,7 @@ clean-up such as history rewriting.
 - **Gate:** G2 · **Trigger:** each exposure of a secret
 - **Evidence:** a secrets inventory with owner and rotation procedure per secret; for each past exposure, a record
   showing rotation at or before the clean-up.
-- **Basis:** [CS-SECRETS], [GH-SENSITIVE].
+- **Basis:** [OWASP-CS-SECRETS], [GH-SENSITIVE].
 
 ### SEC-9 · MUST · Secret scanning enabled
 
@@ -123,7 +123,7 @@ protection or a pre-commit hook).
 
 - **Gate:** G1
 - **Evidence:** push protection enabled, or a committed pre-commit configuration with a secret detector.
-- **Basis:** [GH-PUSHPROT], [CS-SECRETS].
+- **Basis:** [GH-PUSHPROT], [OWASP-CS-SECRETS].
 
 ### SEC-11 · MUST · Dependency vulnerabilities monitored and fixed on a schedule
 
@@ -179,7 +179,7 @@ The project MUST publish how to report a vulnerability and have a policy for tri
 - **Gate:** G3 · **Trigger:** each vulnerability report received
 - **Evidence:** a `SECURITY.md` (or equivalent) with a contact and expected response time; for internet-facing services,
   a `/.well-known/security.txt`; a written triage and remediation policy.
-- **Basis:** [SSDF], [GH-SECPOL], [CS-VULN], [RFC9116].
+- **Basis:** [SSDF], [GH-SECPOL], [OWASP-CS-VULN], [RFC9116].
 
 ### SEC-17 · MUST · Generic authentication failure messages
 
@@ -188,7 +188,7 @@ account exists.
 
 - **Gate:** G2
 - **Evidence:** login and password-reset failure messages are identical for unknown accounts and wrong credentials.
-- **Basis:** [CS-AUTHN].
+- **Basis:** [OWASP-CS-AUTHN].
 
 ### SEC-18 · MUST · Session identifier renewed on privilege change
 
@@ -197,16 +197,16 @@ A new session identifier MUST be issued after login and after any other privileg
 - **Gate:** G2
 - **Evidence:** a test or manual check that the session identifier differs before and after login and after a role
   change, and that the old identifier is rejected.
-- **Basis:** [CS-SESSION].
+- **Basis:** [OWASP-CS-SESSION].
 
 ## Failure modes
 
 - Authorisation enforced only in the user interface, or access granted by default. [T10-A01], [ASVS5]
-- Secrets hardcoded in source or configuration files, then leaked through history or images. [CS-SECRETS]
+- Secrets hardcoded in source or configuration files, then leaked through history or images. [OWASP-CS-SECRETS]
 - A leaked secret "fixed" by rewriting history without rotating it, while old clones re-push it. [GH-SENSITIVE]
 - Only successful logins logged, so attacks go unnoticed. [T10-A09]
 - Default accounts, debug mode or verbose errors left on in production. [T10-A02]
-- A threat model written once and never updated. [CS-THREAT]
+- A threat model written once and never updated. [OWASP-CS-THREAT]
 
 ## References
 
@@ -234,47 +234,6 @@ A new session identifier MUST be issued after login and after any other privileg
   > "Verify that the application only contains components which have not breached the documented update and remediation time frames." (V15.2 Security Architecture and Dependencies)
 
   > "Verify that a generic message is returned to the consumer when an unexpected or security-sensitive error occurs" (V16.5 Error Handling)
-- **[CS-AUTHN]** Authentication Cheat Sheet. OWASP Cheat Sheet Series.
-  https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html . Accessed 2026-10-31.
-  > "an application must respond with a generic error message regardless of whether: The user ID or password was incorrect." (Authentication Responses)
-
-  > "Multi-factor authentication (MFA) is by far the best defense against the majority of password-related attacks" (Multi-Factor Authentication)
-- **[CS-AUTHZ]** Authorization Cheat Sheet. OWASP Cheat Sheet Series.
-  https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html . Accessed 2026-10-31.
-  > "Permission should be validated correctly on every request, regardless of whether the request was initiated by an AJAX script, server-side, or any other source." (Validate the Permissions on Every Request)
-
-  > "Least Privileges must be applied both horizontally and vertically." (Enforce Least Privileges)
-- **[CS-LOGGING]** Logging Cheat Sheet. OWASP Cheat Sheet Series.
-  https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html . Accessed 2026-10-31. The three items after
-  the sentence are quoted from the list that follows it.
-  > "The following should usually not be recorded directly in the logs, but instead should be removed, masked, sanitized, hashed, or encrypted:" (Data to exclude)
-  > "Access tokens" (Data to exclude)
-  > "Authentication passwords" (Data to exclude)
-  > "Encryption keys and other primary secrets" (Data to exclude)
-- **[CS-SECRETS]** Secrets Management Cheat Sheet. OWASP Cheat Sheet Series.
-  https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html . Accessed 2026-10-31.
-  > "Many organizations have them hardcoded within the source code in plaintext, littered throughout configuration files and configuration management tools." (1 Introduction)
-
-  > "It is therefore better to automate the rotation of keys or at least ensure that the process is sufficiently supported by IT." (2.4 Automate Secrets Management)
-
-  > "Consider enabling secrets detection at the developer level to avoid checking secrets into code before commit/PR either in the IDE, as part of test-driven development, or via pre-commit hook." (8.1 General detection approaches)
-- **[CS-SESSION]** Session Management Cheat Sheet. OWASP Cheat Sheet Series.
-  https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html . Accessed 2026-10-31.
-  > "The session ID must be renewed or regenerated by the web application after any privilege level change within the associated user session." (Renew the Session ID After Any Privilege Level Change)
-
-  > "Session timeout management and expiration must be enforced server-side." (Idle Timeout)
-
-  > "All sessions should implement an absolute timeout, regardless of session activity." (Absolute Timeout)
-- **[CS-THREAT]** Threat Modeling Cheat Sheet. OWASP Cheat Sheet Series.
-  https://cheatsheetseries.owasp.org/cheatsheets/Threat_Modeling_Cheat_Sheet.html . Accessed 2026-10-31.
-  > "Threat modeling is ideally performed early in the SDLC, such as during the design phase." (Overview)
-
-  > "A threat model is something that should be maintained, updated and refined alongside the system." (Overview)
-- **[CS-VULN]** Vulnerability Disclosure Cheat Sheet. OWASP Cheat Sheet Series.
-  https://cheatsheetseries.owasp.org/cheatsheets/Vulnerability_Disclosure_Cheat_Sheet.html . Accessed 2026-10-31.
-  > "Provide a clear method for researchers to securely report vulnerabilities." (Introduction)
-
-  > "Acknowledge the vulnerability details and provide a timeline to carry out triage." (Communicating With Researchers)
 - **[GH-CODESCAN]** About code scanning. GitHub Docs.
   https://docs.github.com/en/code-security/concepts/code-scanning/code-scanning . Accessed 2026-10-31.
   > "Code scanning is a feature that you use to analyze the code in a GitHub repository to find security vulnerabilities and coding errors."
@@ -297,6 +256,47 @@ A new session identifier MUST be issued after login and after any other privileg
   > "if the sensitive data you need to remove is a secret (e.g. password/token/credential), as is often the case, then as a first step you need to revoke and/or rotate that secret." (About removing sensitive data from a repository)
 
   > "If a fellow developer has a clone from before your rewrite, and after your rewrite simply runs git pull followed by git push , the sensitive data will return." (Side effects of rewriting history)
+- **[OWASP-CS-AUTHN]** Authentication Cheat Sheet. OWASP Cheat Sheet Series.
+  https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html . Accessed 2026-10-31.
+  > "an application must respond with a generic error message regardless of whether: The user ID or password was incorrect." (Authentication Responses)
+
+  > "Multi-factor authentication (MFA) is by far the best defense against the majority of password-related attacks" (Multi-Factor Authentication)
+- **[OWASP-CS-AUTHZ]** Authorization Cheat Sheet. OWASP Cheat Sheet Series.
+  https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html . Accessed 2026-10-31.
+  > "Permission should be validated correctly on every request, regardless of whether the request was initiated by an AJAX script, server-side, or any other source." (Validate the Permissions on Every Request)
+
+  > "Least Privileges must be applied both horizontally and vertically." (Enforce Least Privileges)
+- **[OWASP-CS-LOGGING]** Logging Cheat Sheet. OWASP Cheat Sheet Series.
+  https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html . Accessed 2026-10-31. The three items after
+  the sentence are quoted from the list that follows it.
+  > "The following should usually not be recorded directly in the logs, but instead should be removed, masked, sanitized, hashed, or encrypted:" (Data to exclude)
+  > "Access tokens" (Data to exclude)
+  > "Authentication passwords" (Data to exclude)
+  > "Encryption keys and other primary secrets" (Data to exclude)
+- **[OWASP-CS-SECRETS]** Secrets Management Cheat Sheet. OWASP Cheat Sheet Series.
+  https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html . Accessed 2026-10-31.
+  > "Many organizations have them hardcoded within the source code in plaintext, littered throughout configuration files and configuration management tools." (1 Introduction)
+
+  > "It is therefore better to automate the rotation of keys or at least ensure that the process is sufficiently supported by IT." (2.4 Automate Secrets Management)
+
+  > "Consider enabling secrets detection at the developer level to avoid checking secrets into code before commit/PR either in the IDE, as part of test-driven development, or via pre-commit hook." (8.1 General detection approaches)
+- **[OWASP-CS-SESSION]** Session Management Cheat Sheet. OWASP Cheat Sheet Series.
+  https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html . Accessed 2026-10-31.
+  > "The session ID must be renewed or regenerated by the web application after any privilege level change within the associated user session." (Renew the Session ID After Any Privilege Level Change)
+
+  > "Session timeout management and expiration must be enforced server-side." (Idle Timeout)
+
+  > "All sessions should implement an absolute timeout, regardless of session activity." (Absolute Timeout)
+- **[OWASP-CS-THREAT]** Threat Modeling Cheat Sheet. OWASP Cheat Sheet Series.
+  https://cheatsheetseries.owasp.org/cheatsheets/Threat_Modeling_Cheat_Sheet.html . Accessed 2026-10-31.
+  > "Threat modeling is ideally performed early in the SDLC, such as during the design phase." (Overview)
+
+  > "A threat model is something that should be maintained, updated and refined alongside the system." (Overview)
+- **[OWASP-CS-VULN]** Vulnerability Disclosure Cheat Sheet. OWASP Cheat Sheet Series.
+  https://cheatsheetseries.owasp.org/cheatsheets/Vulnerability_Disclosure_Cheat_Sheet.html . Accessed 2026-10-31.
+  > "Provide a clear method for researchers to securely report vulnerabilities." (Introduction)
+
+  > "Acknowledge the vulnerability details and provide a timeline to carry out triage." (Communicating With Researchers)
 - **[RFC9116]** RFC 9116: A File Format to Aid in Security Vulnerability Disclosure. IETF (Foudil, Shafranovich), April
   2022. https://www.rfc-editor.org/rfc/rfc9116.html . Accessed 2026-10-31.
   > "This document defines a machine-parsable format ("security.txt") to help organizations describe their vulnerability disclosure practices to make it easier for researchers to report vulnerabilities."

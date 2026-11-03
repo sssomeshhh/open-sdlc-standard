@@ -31,7 +31,6 @@ jobs:
       - if: steps.check.outputs.attention == '1'
         # One open issue at most: comment on it if it exists, otherwise open it.
         run: |
-          gh label create citation --color FBCA04 --description "Citation problems" --force
           open_issue=$(gh issue list --label citation --state open --json number --jq '.[0].number // empty')
           if [ -n "$open_issue" ]; then
             gh issue comment "$open_issue" --body-file report.md

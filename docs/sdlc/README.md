@@ -17,6 +17,7 @@ optional default layout in the [README](../../README.md) ("Default layout (optio
 
 | Requirement area | Where the evidence is |
 |---|---|
+| Protected main branch and pull requests (SCM-3, SCM-5) | [Repository settings](#repository-settings) |
 | Contribution rules (SCM-9) | [.github/CONTRIBUTING.md](../../.github/CONTRIBUTING.md) |
 | Pull request and issue templates (SCM-8) | [.github/pull_request_template.md](../../.github/pull_request_template.md), [.github/ISSUE_TEMPLATE/](../../.github/ISSUE_TEMPLATE/) |
 | Ignore rules (SCM-10) | [.gitignore](../../.gitignore) |
@@ -25,6 +26,21 @@ optional default layout in the [README](../../README.md) ("Default layout (optio
 | Changelog | [CHANGELOG.md](../../CHANGELOG.md) |
 | Licence and attribution | [LICENSE](../../LICENSE), [NOTICE.md](../../NOTICE.md) |
 | Quotes checked against their sources | [citation-check-2026-11-01.txt](citation-check-2026-11-01.txt) (automatic, all quotes), [manual-citation-checks.json](manual-citation-checks.json) (by hand) |
+
+## Repository settings
+
+Settings that live on GitHub rather than in files. They are set up once by the owner and changed only on purpose.
+
+- **Default branch:** `trunk`.
+- **Branch protection on `trunk`:** changes only through a pull request (no approval required while SCM-6 is unmet);
+  the `structure` check must pass on a branch that is up to date with `trunk`; signed commits required; conversations
+  resolved before merging; the rules apply to administrators too; force pushes and deletion blocked.
+- **Labels:**
+  - `proposal` (colour `1D76DB`): "Proposed change to a requirement or rule"; applied by the "Change proposal" issue
+    template.
+  - `citation` (colour `D93F0B`): "Problem with a quote, source or link"; applied by the "Citation problem" issue
+    template and used by the monthly citation check (`.github/workflows/citations-monthly.yml`), which does not create
+    it.
 
 ## Unmet requirements
 
